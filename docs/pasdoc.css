@@ -259,48 +259,44 @@ table.detail {
    table cells. */
 table.table_tag td > p:first-child,
 table.table_tag th > p:first-child,
-       td.itemdesc > p:first-child { margin-top: 0em; }
+  td.itemdesc > p:first-child { margin-top: 0em; }
 
 table.table_tag td > p:last-child,
 table.table_tag th > p:last-child,
-       td.itemdesc > p:last-child { margin-bottom: 0em; }
+  td.itemdesc > p:last-child { margin-bottom: 0em; }
 
 
 
 /* body */
-/* Modifica: Aggiungi altezza minima e display flex */
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%; /* Assicura che l'html e il body abbiano l'altezza completa */
-  min-height: 100vh; /* Usa vh per l'altezza della viewport */
+  height: 100%;
+  min-height: 100vh;
 }
 
 body {
   font-family: Verdana,Arial;
   color: black;
   background-color: white;
-  display: flex; /* Imposta il body come contenitore flex */
-  flex-direction: column; /* Organizza gli elementi figli (solo il container in questo caso) in colonna */
+  display: flex;
+  flex-direction: column;
 }
 
-/* Modifica: Rimuovi height: 100% (non serve più) e aggiungi flex-grow: 1 */
 .container {
   width: 100%;
-  /* Rimuovi height: 100%; */
   border-spacing: 0;
-  flex-grow: 1; /* Permette al container di espandersi e occupare tutto lo spazio disponibile */
-  display: flex; /* Imposta il container come contenitore flex per le colonne .navigation e .content */
+  flex-grow: 1;
+  display: flex;
 }
 
-/* Modifica: Rendi .content un contenitore Flex per organizzare i suoi figli verticalmente */
 .content {
   margin-left: 20em; /* must match .navigation width */
   box-sizing: border-box;
   padding: 1em;
-  display: flex; /* Abilita Flexbox */
-  flex-direction: column; /* Organizza gli elementi in colonna (header, table, footer, ecc.) */
-  flex-grow: 1; /* Molto importante: permette al contenuto di espandersi nell'altezza del container */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .content h1 {
   margin-top: 0;
@@ -315,13 +311,6 @@ body {
     width: 100%;
     border-top: 3px solid #3498db;
 }
-
-/* .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 0 20px;
-} */
 
 .footer-content {
     max-width: 1200px;
