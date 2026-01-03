@@ -95,7 +95,7 @@ PASDOC_OPTS = \
     --graphviz-classes \
     --verbosity 2 \
     --exclude-generator \
-    --title "StarTools Docs" \
+    --title "jflibfp Docs" \
     --footer "$(FOOTER_WIN)" \
     --css "$(CSS_WIN)" \
     --external-class-hierarchy="$(EXTERNAL_CH_WIN)"
