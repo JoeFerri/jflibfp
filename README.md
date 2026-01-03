@@ -53,8 +53,8 @@ To compile jflibfp, you need to have the following tools installed on your syste
 Start by cloning this repository to your local machine:
 ```bash
 git clone https://github.com/JoeFerri/jflibfp.git
-```
 cd jflibfp
+```
 
 ### 2. Install External Dependencies
 -
