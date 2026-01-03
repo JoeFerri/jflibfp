@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>StarTools Docs: ConsoleUnit: Class TConsoleReaderThread</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<div class="container"><div class="navigation">
+<h2><a href="index.html">StarTools Docs</a></h2><ul><li><a href="AllUnits.html">Units</a></li><li><a href="ClassHierarchy.html">Class Hierarchy</a></li><li><a href="AllClasses.html">Classes, Interfaces, Objects and Records</a></li><li><a href="AllTypes.html">Types</a></li><li><a href="AllVariables.html">Variables</a></li><li><a href="AllConstants.html">Constants</a></li><li><a href="AllFunctions.html">Functions and Procedures</a></li><li><a href="AllIdentifiers.html">Identifiers</a></li><li><a href="GVUses.png">Unit dependency graph</a></li><li><a href="GVClasses.png">Classes hierarchy graph</a></li></ul></div><div class="content">
+<span id="TConsoleReaderThread"></span><h1 class="cio">Class TConsoleReaderThread</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section"><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></div><div class="one_section"><a class="section" href="#PasDoc-Fields">Fields</a></div><div class="one_section"><a class="section" href="#PasDoc-Methods">Methods</a></div><div class="one_section"><a class="section" href="#PasDoc-Properties">Properties</a></div></div>
+<span id="PasDoc-Description"></span><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a href="ConsoleUnit.html">ConsoleUnit</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type TConsoleReaderThread = class(TThread)</code></p>
+<h2 class="description">Description</h2>
+<p>
+A thread class dedicated to creating and managing a separate Windows console for input/output. The thread continuously monitors the console's standard input (stdin) and delivers received lines to the <a class="normal" href="ConsoleUnit.TConsoleReaderThread.html#Owner">Owner</a> using the <a class="normal" href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a> interface.</p>
+<span id="PasDoc-Hierarchy"></span><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="ancestor">TThread</li>
+<li class="thisitem">TConsoleReaderThread</li></ul><h2 class="overview">Overview</h2>
+<span id="PasDoc-Fields"></span><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><code><strong><a href="ConsoleUnit.TConsoleReaderThread.html#StdInHandle">StdInHandle</a></strong>: THandle;</code></td>
+</tr>
+</table>
+<span id="PasDoc-Methods"></span><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#Execute">Execute</a></strong>; override;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSInit">CSInit</a></strong>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSBlockWrite">CSBlockWrite</a></strong>(const ABlock: Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSIsWriteBlocked">CSIsWriteBlocked</a></strong>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSWrite">CSWrite</a></strong>(const S: string);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSWriteLn">CSWriteLn</a></strong>(const S: string);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSInput">CSInput</a></strong>(const S: String; const pre: Boolean; const post: Boolean); overload;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSInput">CSInput</a></strong>(const S: String); overload;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSWriteLogEntryUTC">CSWriteLogEntryUTC</a></strong>(level: <a href="ConsoleUnit.html#TLevelLog">TLevelLog</a>; const MessageString: String);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSShow">CSShow</a></strong>; overload;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSShow">CSShow</a></strong>(MainForm: TForm); overload;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSShow">CSShow</a></strong>(Mode: <a href="ConsoleUnit.html#TConsolePosMode">TConsolePosMode</a>; MainForm: TForm; MonitorIndex: Integer = 0); overload;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSHide">CSHide</a></strong>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSDisableCloseButton">CSDisableCloseButton</a></strong>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSEnableCloseButton">CSEnableCloseButton</a></strong>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#CSSetForegroundWindow">CSSetForegroundWindow</a></strong>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#MessageInfoLog">MessageInfoLog</a></strong>(level: <a href="ConsoleUnit.html#TLevelLog">TLevelLog</a>; Message: String); overload;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#MessageInfoLog">MessageInfoLog</a></strong>(level: <a href="ConsoleUnit.html#TLevelLog">TLevelLog</a>; Message: String; Info: String); overload;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#NoticeLog">NoticeLog</a></strong>(Message: String); overload;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#NoticeLog">NoticeLog</a></strong>(Message: String; Info: String); overload;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#WarningLog">WarningLog</a></strong>(Message: String); overload;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#WarningLog">WarningLog</a></strong>(Message: String; Info: String); overload;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#ErrorLog">ErrorLog</a></strong>(Message: String); overload;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#ErrorLog">ErrorLog</a></strong>(Message: String; Info: String); overload;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#InfoLog">InfoLog</a></strong>(Message: String); overload;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#InfoLog">InfoLog</a></strong>(Message: String; Info: String); overload;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#DebugLog">DebugLog</a></strong>(Message: String); overload;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#DebugLog">DebugLog</a></strong>(Message: String; Info: String); overload;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#Log">Log</a></strong>(Message: String); overload;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="ConsoleUnit.TConsoleReaderThread.html#Log">Log</a></strong>(Message: String; Info: String); overload;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>constructor <strong><a href="ConsoleUnit.TConsoleReaderThread.html#Create">Create</a></strong>(AOwner: <a href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a>); overload;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>constructor <strong><a href="ConsoleUnit.TConsoleReaderThread.html#Create">Create</a></strong>(AOwner: <a href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a>; Preface: String); overload;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>constructor <strong><a href="ConsoleUnit.TConsoleReaderThread.html#Create">Create</a></strong>(AOwner: <a href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a>; Preface: String; AStoreText: Boolean); overload;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>destructor <strong><a href="ConsoleUnit.TConsoleReaderThread.html#Destroy">Destroy</a></strong>; override;</code></td>
+</tr>
+</table>
+<span id="PasDoc-Properties"></span><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <strong><a href="ConsoleUnit.TConsoleReaderThread.html#Owner">Owner</a></strong>: <a href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a> read FOwner;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><span id="StdInHandle"></span><code><strong>StdInHandle</strong>: THandle;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+The handle to the console's standard input. Used internally during initialization.</p>
+</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><span id="Execute"></span><code>procedure <strong>Execute</strong>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+The main execution loop of the thread. Allocates the console, sets up standard I/O handles, and continuously calls <code>ReadConsole()</code> to capture user input.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSInit"></span><code>procedure <strong>CSInit</strong>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Initializes the console environment. Calls <code>AllocConsole</code> and sets up the standard input, output, and error handles. Platform: Windows</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSBlockWrite"></span><code>procedure <strong>CSBlockWrite</strong>(const ABlock: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Sets whether console output is blocked. </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>ABlock</dt>
+<dd>If True, subsequent console write operations are ignored.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSIsWriteBlocked"></span><code>function <strong>CSIsWriteBlocked</strong>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Checks if console output is currently blocked. </p>
+<h6 class="description_section">Returns</h6>
+<p class="return">True if console writing is blocked; otherwise, False.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSWrite"></span><code>procedure <strong>CSWrite</strong>(const S: string);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Writes the specified string to the console's standard output without a line break. </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>S</dt>
+<dd>The string to write.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSWriteLn"></span><code>procedure <strong>CSWriteLn</strong>(const S: string);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Writes the specified string to the console's standard output followed by a line break. </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>S</dt>
+<dd>The string to write.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSInput"></span><code>procedure <strong>CSInput</strong>(const S: String; const pre: Boolean; const post: Boolean); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Writes a string to the console and optionally displays an input prompt. This is the detailed overload, allowing control over prefix and prompt display.   </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>S</dt>
+<dd>The message string to display before the input prompt.</dd>
+<dt>pre</dt>
+<dd>If True, prefixes the message with ': '.</dd>
+<dt>post</dt>
+<dd>If True, displays the input prompt '&gt; ' after the message.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSInput"></span><code>procedure <strong>CSInput</strong>(const S: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Writes a string to the console, prefixes it with ': ', and displays the input prompt '&gt; '. Default overload for standard console interaction. </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>S</dt>
+<dd>The message string to display before the input prompt.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSWriteLogEntryUTC"></span><code>procedure <strong>CSWriteLogEntryUTC</strong>(level: <a href="ConsoleUnit.html#TLevelLog">TLevelLog</a>; const MessageString: String);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Writes a timestamped log entry to the console using UTC time.  </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>level</dt>
+<dd>The log level to use <a class="normal" href="ConsoleUnit.html#TLevelLog">TLevelLog</a>.</dd>
+<dt>MessageString</dt>
+<dd>The log message content.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSShow"></span><code>procedure <strong>CSShow</strong>; overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Shows the console window. Platform: Windows </p>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="ConsoleUnit.TConsoleReaderThread.html#CSHide">CSHide</a></dt>
+  <dd>Hides the console window.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSShow"></span><code>procedure <strong>CSShow</strong>(MainForm: TForm); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Shows the console window. Platform: Windows  </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>MainForm</dt>
+<dd>The main form to associate with the console window.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="ConsoleUnit.TConsoleReaderThread.html#CSHide">CSHide</a></dt>
+  <dd>Hides the console window.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSShow"></span><code>procedure <strong>CSShow</strong>(Mode: <a href="ConsoleUnit.html#TConsolePosMode">TConsolePosMode</a>; MainForm: TForm; MonitorIndex: Integer = 0); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Shows the console window. Platform: Windows    </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Mode</dt>
+<dd>The position mode for the console window.</dd>
+<dt>MainForm</dt>
+<dd>The main form to associate with the console window.</dd>
+<dt>MonitorIndex</dt>
+<dd>The index of the monitor to use for positioning the console window.</dd>
+</dl>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="ConsoleUnit.TConsoleReaderThread.html#CSHide">CSHide</a></dt>
+  <dd>Hides the console window.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSHide"></span><code>procedure <strong>CSHide</strong>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Hides the console window. Platform: Windows </p>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="ConsoleUnit.TConsoleReaderThread.html#CSShow">CSShow</a></dt>
+  <dd>Shows the console window.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSDisableCloseButton"></span><code>procedure <strong>CSDisableCloseButton</strong>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Disables the close button (X) on the console window's title bar. This prevents the user from closing the console using the standard window controls, allowing the managing application to control the console's lifecycle. Platform: Windows  <dl class="tag note"><dt><strong>Note</strong></dt><dd>TODO: Keyboard shortcuts for closing the console window are not yet implemented.</dd></dl></p>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="ConsoleUnit.TConsoleReaderThread.html#CSEnableCloseButton">CSEnableCloseButton</a></dt>
+  <dd>Enables the close button (X) on the console window's title bar.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSEnableCloseButton"></span><code>procedure <strong>CSEnableCloseButton</strong>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Enables the close button (X) on the console window's title bar. Platform: Windows </p>
+<h6 class="description_section">See also</h6>
+<dl class="see_also">
+  <dt><a class="normal" href="ConsoleUnit.TConsoleReaderThread.html#CSDisableCloseButton">CSDisableCloseButton</a></dt>
+  <dd>Disables the close button (X) on the console window's title bar.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CSSetForegroundWindow"></span><code>procedure <strong>CSSetForegroundWindow</strong>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Brings the console window to the foreground. Platform: Windows</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="MessageInfoLog"></span><code>procedure <strong>MessageInfoLog</strong>(level: <a href="ConsoleUnit.html#TLevelLog">TLevelLog</a>; Message: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs a message with the specified log level.  </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>level</dt>
+<dd>The log level to use <a class="normal" href="ConsoleUnit.html#TLevelLog">TLevelLog</a>.</dd>
+<dt>Message</dt>
+<dd>The main log message.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="MessageInfoLog"></span><code>procedure <strong>MessageInfoLog</strong>(level: <a href="ConsoleUnit.html#TLevelLog">TLevelLog</a>; Message: String; Info: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs a message with the specified log level and additional info.   </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>level</dt>
+<dd>The log level to use <a class="normal" href="ConsoleUnit.html#TLevelLog">TLevelLog</a>.</dd>
+<dt>Message</dt>
+<dd>The main log message.</dd>
+<dt>Info</dt>
+<dd>Additional information to include in the log entry.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="NoticeLog"></span><code>procedure <strong>NoticeLog</strong>(Message: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs a notice-level message. </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Message</dt>
+<dd>The log message.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="NoticeLog"></span><code>procedure <strong>NoticeLog</strong>(Message: String; Info: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs a notice-level message with additional info.  </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Message</dt>
+<dd>The main log message.</dd>
+<dt>Info</dt>
+<dd>Additional information to include in the log entry.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="WarningLog"></span><code>procedure <strong>WarningLog</strong>(Message: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs a warning-level message. </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Message</dt>
+<dd>The log message.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="WarningLog"></span><code>procedure <strong>WarningLog</strong>(Message: String; Info: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs a warning-level message with additional info.  </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Message</dt>
+<dd>The main log message.</dd>
+<dt>Info</dt>
+<dd>Additional information to include in the log entry.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="ErrorLog"></span><code>procedure <strong>ErrorLog</strong>(Message: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs an error-level message. </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Message</dt>
+<dd>The log message.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="ErrorLog"></span><code>procedure <strong>ErrorLog</strong>(Message: String; Info: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs an error-level message with additional info.  </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Message</dt>
+<dd>The main log message.</dd>
+<dt>Info</dt>
+<dd>Additional information to include in the log entry.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="InfoLog"></span><code>procedure <strong>InfoLog</strong>(Message: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs an info-level message. </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Message</dt>
+<dd>The log message.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="InfoLog"></span><code>procedure <strong>InfoLog</strong>(Message: String; Info: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs an info-level message with additional info.  </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Message</dt>
+<dd>The main log message.</dd>
+<dt>Info</dt>
+<dd>Additional information to include in the log entry.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="DebugLog"></span><code>procedure <strong>DebugLog</strong>(Message: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs a debug-level message. </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Message</dt>
+<dd>The log message.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="DebugLog"></span><code>procedure <strong>DebugLog</strong>(Message: String; Info: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs a debug-level message with additional info.  </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Message</dt>
+<dd>The main log message.</dd>
+<dt>Info</dt>
+<dd>Additional information to include in the log entry.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Log"></span><code>procedure <strong>Log</strong>(Message: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs a general message. </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Message</dt>
+<dd>The log message.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Log"></span><code>procedure <strong>Log</strong>(Message: String; Info: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Logs a general message with additional info.  </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>Message</dt>
+<dd>The main log message.</dd>
+<dt>Info</dt>
+<dd>Additional information to include in the log entry.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Create"></span><code>constructor <strong>Create</strong>(AOwner: <a href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a>); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Creates and initializes the console reader thread without a preface message. </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>AOwner</dt>
+<dd>The object that implements <a class="normal" href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a> to receive input.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Create"></span><code>constructor <strong>Create</strong>(AOwner: <a href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a>; Preface: String); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Creates and initializes the console reader thread with an initial preface message.  </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>AOwner</dt>
+<dd>The object that implements <a class="normal" href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a> to receive input.</dd>
+<dt>Preface</dt>
+<dd>A string displayed at console startup.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Create"></span><code>constructor <strong>Create</strong>(AOwner: <a href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a>; Preface: String; AStoreText: Boolean); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Creates and initializes the console reader thread with a preface and option to store output.   </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>AOwner</dt>
+<dd>The object that implements <a class="normal" href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a> to receive input.</dd>
+<dt>Preface</dt>
+<dd>A string displayed at console startup.</dd>
+<dt>AStoreText</dt>
+<dd>If True, all console output is stored internally in <code>FStoredText</code>.</dd>
+</dl>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Destroy"></span><code>destructor <strong>Destroy</strong>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Destroys the thread and frees the console resource. Calls <code>FreeConsole</code> before inherited destruction.</p>
+</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Owner"></span><code>property <strong>Owner</strong>: <a href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a> read FOwner;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Reference to the component implementing <a class="normal" href="ConsoleUnit.IConsoleInputHandler.html">IConsoleInputHandler</a>.</p>
+</td></tr>
+</table>
+<br>
+<footer id="main-footer" class="doc-footer">
+    <div class="footer-content">
+        <div class="footer-text">
+            <p>&copy; Copyright (c) 2025 Giuseppe Ferri - <a href="https://github.com/JoeFerri">github.com/JoeFerri</a></p>
+            <p><em>Generated by <a href="https://pasdoc.github.io/">PasDoc</a>.</em></p>
+        </div>
+        <div class="footer-logo">
+            <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">
+                <img src="agplv3-with-text-100x42.png" alt="AGPL Logo">
+            </a>
+        </div>
+    </div>
+</footer></div></div></body></html>

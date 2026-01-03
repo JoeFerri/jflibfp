@@ -1,0 +1,9 @@
+DiGraph Classes {
+  "IConsoleInputHandler" -> "IInterface"
+  "IConsoleInputHandler" [href="ConsoleUnit.IConsoleInputHandler.html"]
+  "TIniPropStorageHelper" -> "TObject"
+  "TIniPropStorageHelper" [href="INIUnit.TIniPropStorageHelper.html"]
+  "TThread" -> "TObject"
+  "TConsoleReaderThread" -> "TThread"
+  "TConsoleReaderThread" [href="ConsoleUnit.TConsoleReaderThread.html"]
+}

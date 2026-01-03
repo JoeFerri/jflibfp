@@ -1,0 +1,22 @@
+DiGraph Uses {
+  "ConsoleUnit" -> "Classes"
+  "ConsoleUnit" -> "SysUtils"
+  "ConsoleUnit" -> "DateUtils"
+  "ConsoleUnit" -> "Forms"
+  "ConsoleUnit" -> "Windows"
+  "ConsoleUnit" -> "Crt"
+  "ConsoleUnit" [href="ConsoleUnit.html"]
+  "FormUnit" -> "Classes"
+  "FormUnit" -> "SysUtils"
+  "FormUnit" -> "Forms"
+  "FormUnit" [href="FormUnit.html"]
+  "INIUnit" -> "Classes"
+  "INIUnit" -> "SysUtils"
+  "INIUnit" -> "IniPropStorage"
+  "INIUnit" -> "IniFiles"
+  "INIUnit" -> "Forms"
+  "INIUnit" [href="INIUnit.html"]
+  "StateFormUnit" -> "Classes"
+  "StateFormUnit" -> "SysUtils"
+  "StateFormUnit" [href="StateFormUnit.html"]
+}
