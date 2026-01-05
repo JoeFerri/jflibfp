@@ -1,5 +1,5 @@
 {
-  This file is part of the JFUtils Free Pascal Library.
+  This file is part of the JFLibFP Free Pascal Library.
 
   Copyright (c) 2025 Giuseppe Ferri <jfinfoit@gmail.com>
 
