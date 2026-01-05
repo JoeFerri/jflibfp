@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>jflibfp Docs: INIUnit</title>
+<title>jflibfp Docs: HTTPSUnit</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link rel="StyleSheet" type="text/css" href="pasdoc.css">
@@ -9,49 +9,41 @@
 <body>
 <div class="container"><div class="navigation">
 <h2><a href="index.html">jflibfp Docs</a></h2><ul><li><a href="AllUnits.html">Units</a></li><li><a href="ClassHierarchy.html">Class Hierarchy</a></li><li><a href="AllClasses.html">Classes, Interfaces, Objects and Records</a></li><li><a href="AllTypes.html">Types</a></li><li><a href="AllVariables.html">Variables</a></li><li><a href="AllConstants.html">Constants</a></li><li><a href="AllFunctions.html">Functions and Procedures</a></li><li><a href="AllIdentifiers.html">Identifiers</a></li><li><a href="GVUses.png">Unit dependency graph</a></li><li><a href="GVClasses.png">Classes hierarchy graph</a></li></ul></div><div class="content">
-<h1 class="unit">Unit INIUnit</h1>
+<h1 class="unit">Unit HTTPSUnit</h1>
 <div class="sections">
-<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section">Uses</div><div class="one_section"><a class="section" href="#PasDoc-Classes">Classes, Interfaces, Objects and Records</a></div><div class="one_section">Functions and Procedures</div><div class="one_section"><a class="section" href="#PasDoc-Types">Types</a></div><div class="one_section">Constants</div><div class="one_section">Variables</div></div>
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section">Uses</div><div class="one_section">Classes, Interfaces, Objects and Records</div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></div><div class="one_section">Types</div><div class="one_section">Constants</div><div class="one_section">Variables</div></div>
 <span id="PasDoc-Description"></span><h2 class="description">Description</h2>
 <p>
-Tools for handling INI files.</p>
+Tools for handling HTTPS requests.</p>
 <span id="PasDoc-Uses"></span><h2 class="overview">Overview</h2>
-<span id="PasDoc-Classes"></span><h3 class="cio">Classes, Interfaces, Objects and Records</h3>
-<table class="classestable wide_list">
-<tr class="listheader">
-<th class="itemname">Name</th>
-<th class="itemdesc">Description</th>
-</tr>
-<tr class="list">
-<td class="itemname">Class&nbsp;<a class="bold" href="INIUnit.TIniPropStorageHelper.html"><code>TIniPropStorageHelper</code></a></td>
-<td class="itemdesc">Tools for handling INI files.</td>
-</tr>
-</table>
-<span id="PasDoc-Types"></span><h3 class="summary">Types</h3>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Functions and Procedures</h3>
 <table class="summary wide_list">
 <tr class="list">
-<td class="itemcode"><code><strong><a href="INIUnit.html#TFormPosMode">TFormPosMode</a></strong> = (...);</code></td>
+<td class="itemcode"><code>function <strong><a href="HTTPSUnit.html#CheckHTTPSURL">CheckHTTPSURL</a></strong>(const wHost: UnicodeString; const wPath: UnicodeString; const UserAgent: UnicodeString = ''): Boolean;</code></td>
 </tr>
 </table>
 <h2 class="description">Description</h2>
-<h3 class="detail">Types</h3>
+<h3 class="detail">Functions and Procedures</h3>
 <table class="detail wide_list">
 <tr class="list">
-<td class="itemcode"><span id="TFormPosMode"></span><code><strong>TFormPosMode</strong> = (...);</code></td>
+<td class="itemcode"><span id="CheckHTTPSURL"></span><code>function <strong>CheckHTTPSURL</strong>(const wHost: UnicodeString; const wPath: UnicodeString; const UserAgent: UnicodeString = ''): Boolean;</code></td>
 </tr>
 <tr><td colspan="1">
 <p>
-Mode for positioning a form.</p>
-<h6 class="description_section">Values</h6>
-<ul>
-<li>
-<span id="fpmDefault">fpmDefault</span></li>
-<li>
-<span id="fpmFollowActiveMonitor">fpmFollowActiveMonitor</span></li>
-<li>
-<span id="fpmSpecificMonitor">fpmSpecificMonitor</span></li>
-</ul>
-</td></tr>
+Checks if a given URL is valid and accessible via HTTPS.
+
+<p>   </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>wHost</dt>
+<dd>The host name or IP address of the server.</dd>
+<dt>wPath</dt>
+<dd>The path to the resource on the server.</dd>
+<dt>UserAgent</dt>
+<dd>The user agent string to be used in the HTTP request.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return"><code>True</code> if the URL is valid and accessible, <code>False</code> otherwise.</p></td></tr>
 </table>
 <br>
 <footer id="main-footer" class="doc-footer">

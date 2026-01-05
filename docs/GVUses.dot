@@ -10,12 +10,22 @@ DiGraph Uses {
   "FormUnit" -> "SysUtils"
   "FormUnit" -> "Forms"
   "FormUnit" [href="FormUnit.html"]
+  "HTTPSUnit" -> "Classes"
+  "HTTPSUnit" -> "SysUtils"
+  "HTTPSUnit" -> "Windows"
+  "HTTPSUnit" -> "WinHttp"
+  "HTTPSUnit" [href="HTTPSUnit.html"]
   "INIUnit" -> "Classes"
   "INIUnit" -> "SysUtils"
   "INIUnit" -> "IniPropStorage"
   "INIUnit" -> "IniFiles"
   "INIUnit" -> "Forms"
   "INIUnit" [href="INIUnit.html"]
+  "ProcessInfoUnit" -> "Classes"
+  "ProcessInfoUnit" -> "SysUtils"
+  "ProcessInfoUnit" -> "Windows"
+  "ProcessInfoUnit" -> "JwaTlHelp32"
+  "ProcessInfoUnit" [href="ProcessInfoUnit.html"]
   "StateFormUnit" -> "Classes"
   "StateFormUnit" -> "SysUtils"
   "StateFormUnit" [href="StateFormUnit.html"]

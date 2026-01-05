@@ -65,7 +65,9 @@ PNG_USES_WIN    = $(PATH_ROOT_SRC)$(SEP)$(OUTDIR)/GVUses.png
 SRC = \
     "$(PATH_ROOT_SRC)$(SEP)project/src/consoleunit.pas" \
     "$(PATH_ROOT_SRC)$(SEP)project/src/formunit.pas" \
+    "$(PATH_ROOT_SRC)$(SEP)project/src/httpsunit.pas" \
     "$(PATH_ROOT_SRC)$(SEP)project/src/iniunit.pas" \
+    "$(PATH_ROOT_SRC)$(SEP)project/src/processinfounit.pas" \
     "$(PATH_ROOT_SRC)$(SEP)project/src/stateformunit.pas"
 
 

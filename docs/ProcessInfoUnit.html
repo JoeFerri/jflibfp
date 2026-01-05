@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jflibfp Docs: ProcessInfoUnit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<div class="container"><div class="navigation">
+<h2><a href="index.html">jflibfp Docs</a></h2><ul><li><a href="AllUnits.html">Units</a></li><li><a href="ClassHierarchy.html">Class Hierarchy</a></li><li><a href="AllClasses.html">Classes, Interfaces, Objects and Records</a></li><li><a href="AllTypes.html">Types</a></li><li><a href="AllVariables.html">Variables</a></li><li><a href="AllConstants.html">Constants</a></li><li><a href="AllFunctions.html">Functions and Procedures</a></li><li><a href="AllIdentifiers.html">Identifiers</a></li><li><a href="GVUses.png">Unit dependency graph</a></li><li><a href="GVClasses.png">Classes hierarchy graph</a></li></ul></div><div class="content">
+<h1 class="unit">Unit ProcessInfoUnit</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section">Uses</div><div class="one_section">Classes, Interfaces, Objects and Records</div><div class="one_section"><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></div><div class="one_section"><a class="section" href="#PasDoc-Types">Types</a></div><div class="one_section">Constants</div><div class="one_section">Variables</div></div>
+<span id="PasDoc-Description"></span><h2 class="description">Description</h2>
+<p>
+Tools for handling processes and retrieving execution information.</p>
+<span id="PasDoc-Uses"></span><h2 class="overview">Overview</h2>
+<span id="PasDoc-FuncsProcs"></span><h3 class="summary">Functions and Procedures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>function <strong><a href="ProcessInfoUnit.html#NormalizeExeName">NormalizeExeName</a></strong>(const AName: string): string;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <strong><a href="ProcessInfoUnit.html#IsProcessRunning">IsProcessRunning</a></strong>(const AExeName: string): Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <strong><a href="ProcessInfoUnit.html#FileTimeToDateTimeLocal">FileTimeToDateTimeLocal</a></strong>(const AFileTime: TFileTime; out ADateTime: TDateTime): Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <strong><a href="ProcessInfoUnit.html#GetProcessCreationTimeByPID">GetProcessCreationTimeByPID</a></strong>(ANativePID: DWORD; out ACreationTime: TDateTime): Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <strong><a href="ProcessInfoUnit.html#FindProcessStartForExe">FindProcessStartForExe</a></strong>(const AExeName: string; out AStartTime: TDateTime; ACriteria: <a href="ProcessInfoUnit.html#TProcessSelectionCriteria">TProcessSelectionCriteria</a> = <a href="ProcessInfoUnit.html#pscOldest">pscOldest</a>): Boolean;</code></td>
+</tr>
+</table>
+<span id="PasDoc-Types"></span><h3 class="summary">Types</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><strong><a href="ProcessInfoUnit.html#TProcessSelectionCriteria">TProcessSelectionCriteria</a></strong> = (...);</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Functions and Procedures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="NormalizeExeName"></span><code>function <strong>NormalizeExeName</strong>(const AName: string): string;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Normalizes an executable name by trimming spaces, converting to lowercase and ensuring the .exe extension is present.  </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>AName</dt>
+<dd>The original executable name or path.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return">The normalized executable name.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="IsProcessRunning"></span><code>function <strong>IsProcessRunning</strong>(const AExeName: string): Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Checks if a process with the given executable name is currently running.  </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>AExeName</dt>
+<dd>The name of the executable (e.g., 'notepad.exe' or just 'notepad').</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return"><code>True</code> if at least one instance of the process is found, <code>False</code> otherwise.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="FileTimeToDateTimeLocal"></span><code>function <strong>FileTimeToDateTimeLocal</strong>(const AFileTime: TFileTime; out ADateTime: TDateTime): Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Converts a Windows <code>TFileTime</code> structure to a local <code>TDateTime</code>.   </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>@code(TFileTime)</dt>
+<dd>The Windows file time structure.</dd>
+<dt>ADateTime</dt>
+<dd>Out parameter that receives the converted <code>TDateTime</code>.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return"><code>True</code> if conversion was successful, <code>False</code> otherwise.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="GetProcessCreationTimeByPID"></span><code>function <strong>GetProcessCreationTimeByPID</strong>(ANativePID: DWORD; out ACreationTime: TDateTime): Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Retrieves the creation time of a process given its PID.   </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>ANativePID</dt>
+<dd>The Native Process ID.</dd>
+<dt>ACreationTime</dt>
+<dd>Out parameter that receives the process creation time.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return"><code>True</code> if the information was successfully retrieved.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="FindProcessStartForExe"></span><code>function <strong>FindProcessStartForExe</strong>(const AExeName: string; out AStartTime: TDateTime; ACriteria: <a href="ProcessInfoUnit.html#TProcessSelectionCriteria">TProcessSelectionCriteria</a> = <a href="ProcessInfoUnit.html#pscOldest">pscOldest</a>): Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Finds the start time of a specific executable. If multiple instances are running, it selects one based on the ACriteria parameter.    </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>AExeName</dt>
+<dd>The name of the executable to search for.</dd>
+<dt>AStartTime</dt>
+<dd>Out parameter that receives the found creation time.</dd>
+<dt>ACriteria</dt>
+<dd>The criteria used to select the instance (First, Oldest, Newest).</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return"><code>True</code> if at least one instance was found and its time retrieved.</p></td></tr>
+</table>
+<h3 class="detail">Types</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><span id="TProcessSelectionCriteria"></span><code><strong>TProcessSelectionCriteria</strong> = (...);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Criteria for selecting a process when multiple instances of the same executable name are running.</p>
+<h6 class="description_section">Values</h6>
+<ul>
+<li>
+<span id="pscFirstFound">pscFirstFound</span>: Returns the first instance encountered in the process snapshot.</li>
+<li>
+<span id="pscOldest">pscOldest</span>: Returns the instance with the earliest creation date.</li>
+<li>
+<span id="pscNewest">pscNewest</span>: Returns the instance with the most recent creation date.</li>
+</ul>
+</td></tr>
+</table>
+<br>
+<footer id="main-footer" class="doc-footer">
+    <div class="footer-content">
+        <div class="footer-text">
+            <p>&copy; Copyright (c) 2025 Giuseppe Ferri - <a href="https://github.com/JoeFerri/jflibfp" target="_blank" rel="noopener noreferrer">github.com/JoeFerri</a></p>
+            <p><em>Generated by <a href="https://pasdoc.github.io/">PasDoc</a>.</em></p>
+        </div>
+        <div class="footer-logo">
+            <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener noreferrer">
+                <img src="agplv3-with-text-100x42.png" alt="AGPL Logo">
+            </a>
+        </div>
+    </div>
+</footer></div></div></body></html>
