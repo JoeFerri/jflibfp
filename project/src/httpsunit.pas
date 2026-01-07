@@ -28,16 +28,11 @@ uses
   Classes, SysUtils, Windows, WinHttp;
 
 
+type
+  THTTPMethod = (hmGET, hmHEAD);
 
-{*
-  Checks if a given URL is valid and accessible via HTTPS.
 
-  @param(wHost The host name or IP address of the server.)
-  @param(wPath The path to the resource on the server.)
-  @param(UserAgent The user agent string to be used in the HTTP request.)
-  @returns(@code(True) if the URL is valid and accessible, @code(False) otherwise.)
-}
-function CheckHTTPSURL(const wHost: UnicodeString; const wPath: UnicodeString; const UserAgent: UnicodeString = ''): Boolean;
+function CheckHTTPSURL(const wHost: UnicodeString; const wPath: UnicodeString; const Method: THTTPMethod = hmHEAD; const UserAgent: UnicodeString = ''): Boolean;
 
 
 
@@ -48,7 +43,7 @@ implementation
 
 
 
-function CheckHTTPSURL(const wHost: UnicodeString; const wPath: UnicodeString; const UserAgent: UnicodeString = ''): Boolean;
+function CheckHTTPSURL(const wHost: UnicodeString; const wPath: UnicodeString; const Method: THTTPMethod = hmHEAD; const UserAgent: UnicodeString = ''): Boolean;
 var
   hSession: HINTERNET = nil;
   hConnect: HINTERNET = nil;
@@ -58,7 +53,7 @@ var
 begin
   Result := False;
 
-  // Initialize WinHTTP session
+  // 1. Initialize WinHTTP session
   hSession := WinHttpOpen(  PWideChar(UserAgent),
                             WINHTTP_ACCESS_TYPE_DEFAULT_PROXY,
                             WINHTTP_NO_PROXY_NAME,
@@ -66,34 +61,38 @@ begin
   if not Assigned(hSession) then Exit;
 
   try
-    // Connect to host
+    // 2. Connect to host
     hConnect := WinHttpConnect(hSession, PWideChar(wHost), INTERNET_DEFAULT_HTTPS_PORT, 0);
     if not Assigned(hConnect) then Exit;
 
-    // Open request handle (HTTPS via WINHTTP_FLAG_SECURE)
-    hRequest := WinHttpOpenRequest( hConnect, 'GET', PWideChar(wPath),
+    // 3. Open request handle (HTTPS via WINHTTP_FLAG_SECURE)
+    case Method of //? PWideChar(sMethod) does not work
+      hmGET: hRequest := WinHttpOpenRequest( hConnect, 'GET', PWideChar(wPath),
                                     nil, WINHTTP_NO_REFERER,
                                     WINHTTP_DEFAULT_ACCEPT_TYPES,
                                     WINHTTP_FLAG_SECURE);
+      hmHEAD: hRequest := WinHttpOpenRequest( hConnect, 'HEAD', PWideChar(wPath),
+                                    nil, WINHTTP_NO_REFERER,
+                                    WINHTTP_DEFAULT_ACCEPT_TYPES,
+                                    WINHTTP_FLAG_SECURE);
+    end;
     if not Assigned(hRequest) then Exit;
 
-    // Send the request
+    // 4. Send the request
     if WinHttpSendRequest(hRequest, WINHTTP_NO_ADDITIONAL_HEADERS, 0,
                           WINHTTP_NO_REQUEST_DATA, 0, 0, 0) then
     begin
-      // Receive response
+      // 5. Receive response
       if WinHttpReceiveResponse(hRequest, nil) then
       begin
         dwSize := SizeOf(dwStatusCode);
-        // Query HTTP status code
+        // 6. Query HTTP status code
         if WinHttpQueryHeaders( hRequest, WINHTTP_QUERY_STATUS_CODE or WINHTTP_QUERY_FLAG_NUMBER,
                                 WINHTTP_HEADER_NAME_BY_INDEX, @dwStatusCode, @dwSize,
                                 WINHTTP_NO_HEADER_INDEX) then
         begin
           if dwStatusCode = 200 then
-            Result := True
-          else if dwStatusCode = 404 then
-            Result := False;
+            Result := True;
         end;
       end;
     end;
